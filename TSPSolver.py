@@ -531,8 +531,10 @@ not counting initial BSSF estimate)</returns> '''
 
 
             temp *= 1-coolingRate
-            #print(temp)
-
+        bssf = {'cost': best.getDistance(),
+        'time': time.time() - start_time,
+        'count': intermediateSolutions,
+        'soln': TSPSolution( best.getTour())}
         return bssf
 
 
